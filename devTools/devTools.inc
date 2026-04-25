@@ -48,6 +48,10 @@
 	//#define DT_ENABLE_IGNORE_PUNISHMENTS
 #endif
 
+#if !defined DT_DISABLE_COMMAND_ALIASES
+	//#define DT_DISABLE_COMMAND_ALIASES
+#endif
+
 #if !defined DT_INTERFACE_LANGUAGE
 	#define DT_INTERFACE_LANGUAGE 0 // 0 - English | 1 - Russian 
 #endif
@@ -84,31 +88,18 @@
 	#define DT_VEHICLE_SPEED_MULTIPLIER 179.28625
 #endif
 
-#if !defined DT_COLOR_MAIN
-	#define DT_COLOR_MAIN 0xfbbaa8FF
-#endif
+#define DT_COLOR_MAIN 		0xfbbaa8FF
 
-#if !defined DT_MAIN_COLOR_TAG
-	#define DT_MAIN_COLOR_TAG "{fbbaa8}" //FFD700
-#endif
+#define DT_MAIN_COLOR_TAG 	"{fbbaa8}" //FFD700
+#define DT_WHITE_COLOR_TAG 	"{FFFFFF}"
+#define DT_RED_COLOR_TAG	"{f44747}"
+#define DT_GREEN_COLOR_TAG 	"{61dd61}"
 
-#if !defined DT_WHITE_COLOR_TAG
-	#define DT_WHITE_COLOR_TAG "{FFFFFF}"
-#endif
+#define DT_TEXT_ON  		""DT_GREEN_COLOR_TAG"On"
+#define DT_TEXT_OFF 		""DT_RED_COLOR_TAG"Off"
 
-#if !defined DT_RED_COLOR_TAG
-	#define DT_RED_COLOR_TAG "{f44747}"
-#endif
-
-#if !defined DT_GREEN_COLOR_TAG
-	#define DT_GREEN_COLOR_TAG "{61dd61}"
-#endif
-
-#define DT_TEXT_ON  ""DT_GREEN_COLOR_TAG"On"
-#define DT_TEXT_OFF ""DT_RED_COLOR_TAG"Off"
-
-#define DT_TAG_HINT  "["DT_NAME"]: "DT_WHITE_COLOR_TAG""
-#define DT_TAG_ERROR "["DT_NAME"]: "DT_RED_COLOR_TAG""
+#define DT_TAG_HINT  		"["DT_NAME"]: "DT_WHITE_COLOR_TAG""
+#define DT_TAG_ERROR 		"["DT_NAME"]: "DT_RED_COLOR_TAG""
 
 #if !DT_INTERFACE_LANGUAGE
 	#include "lang\en.inc"
@@ -212,8 +203,7 @@ enum DT_E_PLAYER_DATA {
 //Command
 	dtp_CommandPage,
 	dtp_CommandType,
-	bool:dtp_CommandNextPage,
-
+	bool:dtp_CommandNextPage
 }
 
 new DT_PlayerData[MAX_PLAYERS][DT_E_PLAYER_DATA];

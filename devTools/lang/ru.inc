@@ -268,10 +268,10 @@ new
 			DT_CMD_TEXT_OINTALL[] = 			"Вы изменили интерьер на %d для всех объектов",
 			DT_CMD_TEXT_ODIS[] = 				"Вы установили расстояние объекта под индексом %d на %.2f",
 			DT_CMD_TEXT_ODISALL[] = 			"Вы установили расстояние %.2f для всех объектов",
-			DT_CMD_TEXT_OSETM[] = 				"Материал объекта под индексом %d изменен на %d, %d, %s, %s, %d",
+			DT_CMD_TEXT_OSETM[] = 				"Материал объекта под индексом %d изменен | Material index: %d | Modelid: %d | Material color: %d",
 			DT_CMD_TEXT_OSETM_TXD_LEN[] = 		"Длина 'Txd name' от 1 до 64 символов",
 			DT_CMD_TEXT_OSETM_TEXTURE_LEN[] = 	"Длина 'Texture name' от 1 до 64 символов",
-			DT_CMD_TEXT_OSETMT[] = 				"Текст объекта под индексом %d изменен на %d, %s, %d, %s, %d, %d, %d, %d, %d",
+			DT_CMD_TEXT_OSETMT[] = 				"Текст объекта под индексом %d изменен",
 			DT_CMD_TEXT_OSETMT_TEXT_LEN[] = 	"Длина текста от 1 до 144 символов",
 			DT_CMD_TEXT_OSETMT_FONT_LEN[] = 	"Длина 'FontFace' от 1 до 64 символов",
 			DT_CMD_TEXT_ORMT[] = 				"У объекта под индексом %d был удален материал в слоте %d",
@@ -286,6 +286,4 @@ new
 			DT_CMD_TEXT_OYALL[] = 				"Позиция Y всех объектов изменена на %f",
 			DT_CMD_TEXT_OZALL[] = 				"Позиция Z всех объектов изменена на %f";
 	#endif
-	
-
 #endif

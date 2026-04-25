@@ -233,7 +233,7 @@ CMD:dtoinfo(playerid, params[]) {
 	//line 1
 	new modelid = Streamer_GetIntData(STREAMER_TYPE_OBJECT, DT_PlayerObjectData[playerid][dto_Object][index], E_STREAMER_MODEL_ID);
 
-	format(DT_string, sizeof(DT_string), "Modelid: "DT_MAIN_COLOR_TAG"%d", modelid);
+	format(DT_string, sizeof(DT_string), "Modelid: %d", modelid);
 	DT_SendSucc(playerid, DT_string);
 
 
@@ -244,7 +244,7 @@ CMD:dtoinfo(playerid, params[]) {
 	GetDynamicObjectPos(DT_PlayerObjectData[playerid][dto_Object][index], x, y, z);
 	GetDynamicObjectRot(DT_PlayerObjectData[playerid][dto_Object][index], rx, ry, rz);
 
-	format(DT_string, sizeof(DT_string), "Position: "DT_MAIN_COLOR_TAG"%f, %f, %f, %f, %f, %f", 
+	format(DT_string, sizeof(DT_string), "Position: %f, %f, %f, %f, %f, %f", 
 		x, y, z,
 		rx, ry, rz);
 	DT_SendSucc(playerid, DT_string); 
@@ -257,7 +257,7 @@ CMD:dtoinfo(playerid, params[]) {
 
 	Streamer_GetFloatData(STREAMER_TYPE_OBJECT, DT_PlayerObjectData[playerid][dto_Object][index], E_STREAMER_STREAM_DISTANCE, distance);
 
-	format(DT_string, sizeof(DT_string), "World: "DT_MAIN_COLOR_TAG"%d "DT_WHITE_COLOR_TAG"| Interior: "DT_MAIN_COLOR_TAG"%d "DT_WHITE_COLOR_TAG"| Distance: "DT_MAIN_COLOR_TAG"%.2f", 
+	format(DT_string, sizeof(DT_string), "World: %d | Interior: %d | Distance: %.2f", 
 		worldid,
 		interiorid,
 		distance);
@@ -269,20 +269,26 @@ CMD:dtoinfo(playerid, params[]) {
 		textureName[64], 
 		materialColor;
 
-	for(new material; material <= 16; material ++) {
-		if(!IsDynamicObjectMaterialUsed(DT_PlayerObjectData[playerid][dto_Object][index], material)) {
+	for(new materialIndex; materialIndex <= 16; materialIndex ++) {
+		if(!IsDynamicObjectMaterialUsed(DT_PlayerObjectData[playerid][dto_Object][index], materialIndex)) {
 			continue;
 		}
 
+		DT_SendSucc(playerid, "");
+
 		GetDynamicObjectMaterial(DT_PlayerObjectData[playerid][dto_Object][index], 
-			material, modelid, txdName, textureName, materialColor);
+			materialIndex, modelid, txdName, textureName, materialColor);
 		
-		format(DT_string, sizeof(DT_string), "Material: %d, %d, %s, %s, %d",
-			material, 
+		format(DT_string, sizeof(DT_string), "Material index: %d | Modelid: %d | Material color: %d",
+			materialIndex,
 			modelid, 
-			txdName, 
-			textureName, 
 			materialColor);
+		DT_SendSucc(playerid, DT_string);
+
+		format(DT_string, sizeof(DT_string), "Txd name: %s", txdName);
+		DT_SendSucc(playerid, DT_string);
+
+		format(DT_string, sizeof(DT_string), "Texture name: %s", textureName);
 		DT_SendSucc(playerid, DT_string);
 	}
 
@@ -297,25 +303,34 @@ CMD:dtoinfo(playerid, params[]) {
 		backColor, 
 		textAlignment;
 
-	for(new material; material <= 16; material ++) {
-		if(!IsDynamicObjectMaterialTextUsed(DT_PlayerObjectData[playerid][dto_Object][index], material)) {
+	for(new materialIndex; materialIndex <= 16; materialIndex ++) {
+		if(!IsDynamicObjectMaterialTextUsed(DT_PlayerObjectData[playerid][dto_Object][index], materialIndex)) {
 			continue;
 		}
 
+		DT_SendSucc(playerid, "");
+	
 		GetDynamicObjectMaterialText(DT_PlayerObjectData[playerid][dto_Object][index], 
-			material, text, materialSize, fontFace, fontSize, bold, fontColor, backColor, textAlignment);
+			materialIndex, text, materialSize, fontFace, fontSize, bold, fontColor, backColor, textAlignment);
 
-		format(DT_string, sizeof(DT_string), "Material Text: %d, %s, %d, %s, %d, %d, %d, %d, %d",
-			material, 
-			text, 
+		format(DT_string, sizeof(DT_string), "Material index: %d | Material size: %d | fontSize: %d | Bold: %d | Text alignment: %d",
+			materialIndex, 
 			materialSize, 
-			fontFace, 
 			fontSize, 
 			bold, 
-			fontColor, 
-			backColor, 
 			textAlignment);
 		DT_SendSucc(playerid, DT_string);
+
+		format(DT_string, sizeof(DT_string), "Text: %s", text);
+		DT_SendSucc(playerid, DT_string);
+
+		format(DT_string, sizeof(DT_string), "FontFace: %s", fontFace);
+		DT_SendSucc(playerid, DT_string);
+
+		format(DT_string, sizeof(DT_string), "Font color: %d | Back color: %d", fontColor, backColor);
+		DT_SendSucc(playerid, DT_string);
+
+		DT_SendSucc(playerid, "");
 	}
 
 	return 1;
@@ -736,14 +751,18 @@ CMD:dtosetm(playerid, params[]) {
 		materialColor);
 
 	new DT_string[144];
+
 	format(DT_string, sizeof(DT_string), DT_CMD_TEXT_OSETM,
 		index,
 		materialIndex,
 		modelid, 
-		txdName,
-		textureName,
 		materialColor);
+	DT_SendSucc(playerid, DT_string);
 
+	format(DT_string, sizeof(DT_string), "Txd name: %s", txdName);
+	DT_SendSucc(playerid, DT_string);
+
+	format(DT_string, sizeof(DT_string), "Texture name: %s", textureName);
 	DT_SendSucc(playerid, DT_string);
 	return 1;
 }
@@ -800,18 +819,25 @@ CMD:dtosetmt(playerid, params[]) {
 		textAlignment);
 
 	new DT_string[144];
-	format(DT_string, sizeof(DT_string), DT_CMD_TEXT_OSETMT,
-		index,
-		materialIndex,
-		text, 
-		materialSize,
-		fontFace, 
+	
+	format(DT_string, sizeof(DT_string), DT_CMD_TEXT_OSETMT, index);
+	DT_SendSucc(playerid, DT_string);
+
+	format(DT_string, sizeof(DT_string), "Material index: %d | Material size: %d | fontSize: %d | Bold: %d | Text alignment: %d",
+		materialIndex, 
+		materialSize, 
 		fontSize, 
 		bold, 
-		fontColor, 
-		backColor, 
 		textAlignment);
+	DT_SendSucc(playerid, DT_string);
 
+	format(DT_string, sizeof(DT_string), "Text: %s", text);
+	DT_SendSucc(playerid, DT_string);
+
+	format(DT_string, sizeof(DT_string), "FontFace: %s", fontFace);
+	DT_SendSucc(playerid, DT_string);
+
+	format(DT_string, sizeof(DT_string), "Font color: %d | Back color: %d", fontColor, backColor);
 	DT_SendSucc(playerid, DT_string);
 	return 1;
 }

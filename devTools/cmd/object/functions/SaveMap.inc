@@ -7,7 +7,7 @@ stock DT_SaveMap(playerid, const mapName[], bool:deleteObjects = false) {
 		return 0;
 	}
 	
-	new DT_string[300];
+	new DT_string[350];
 
 	new fileName[32 + DT_LENGTH_PROJECT_NAME],
 		totalIndex;
@@ -82,15 +82,15 @@ stock DT_SaveMap(playerid, const mapName[], bool:deleteObjects = false) {
 
 
 	//Material
-		for(new material; material <= 16; material ++) {
+		for(new materialIndex; materialIndex <= 16; materialIndex ++) {
 
-			if(IsDynamicObjectMaterialUsed(DT_PlayerObjectData[playerid][dto_Object][index], material)) {
+			if(IsDynamicObjectMaterialUsed(DT_PlayerObjectData[playerid][dto_Object][index], materialIndex)) {
 				
 				GetDynamicObjectMaterial(DT_PlayerObjectData[playerid][dto_Object][index], 
-					material, m_modelid, txdName, textureName, materialColor);
+					materialIndex, m_modelid, txdName, textureName, materialColor);
 
 				format(DT_string, sizeof(DT_string), "SetDynamicObjectMaterial(tmpobjid, %d, %d, \"%s\", \"%s\", %d);\r\n",
-					material, 
+					materialIndex, 
 					m_modelid, 
 					txdName, 
 					textureName, 
@@ -99,10 +99,10 @@ stock DT_SaveMap(playerid, const mapName[], bool:deleteObjects = false) {
 				fwrite(File, DT_string);
 			}
 
-			if(IsDynamicObjectMaterialTextUsed(DT_PlayerObjectData[playerid][dto_Object][index], material)) {
+			if(IsDynamicObjectMaterialTextUsed(DT_PlayerObjectData[playerid][dto_Object][index], materialIndex)) {
 
 				GetDynamicObjectMaterialText(DT_PlayerObjectData[playerid][dto_Object][index], 
-					material, mt_text, materialSize, fontFace, fontSize, bold, fontColor, backColor, textAlignment);
+					materialIndex, mt_text, materialSize, fontFace, fontSize, bold, fontColor, backColor, textAlignment);
 
 				switch(materialSize) {
 					case OBJECT_MATERIAL_SIZE_32x32: textSizeMaterial = "OBJECT_MATERIAL_SIZE_32x32";
@@ -123,7 +123,7 @@ stock DT_SaveMap(playerid, const mapName[], bool:deleteObjects = false) {
 				}
 
 				format(DT_string, sizeof(DT_string), "SetDynamicObjectMaterialText(tmpobjid, %d, \"%s\", %s, \"%s\", %d, %d, %d, %d, %d);\r\n",
-					material, 
+					materialIndex, 
 					mt_text, 
 					textSizeMaterial, 
 					fontFace, 
@@ -133,8 +133,8 @@ stock DT_SaveMap(playerid, const mapName[], bool:deleteObjects = false) {
 					backColor, 
 					textAlignment);
 
-				for(new text_str; text_str < strlen(DT_string); text_str ++) {
-					fputchar(File, DT_string[text_str], false);
+				for(new i; i < strlen(DT_string); i ++) {
+					fputchar(File, DT_string[i], false);
 				}
 			}
 		}

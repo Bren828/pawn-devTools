@@ -465,7 +465,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			DT_PlayerData[playerid][dtp_RaknetPassengerIDStats] = targetid;
 			DT_PlayerData[targetid][dtp_RaknetPassengerIDStats] = playerid;
 			
-			DT_PlayerData[playerid][dtp_RaknetPassengerStatsTD] = CreatePlayerTextDraw(playerid, 515.0, 170.0, "No data");
+			DT_PlayerData[playerid][dtp_RaknetPassengerStatsTD] = CreatePlayerTextDraw(playerid, 515.0, 165.0, "No data");
 			PlayerTextDrawBackgroundColor(playerid, DT_PlayerData[playerid][dtp_RaknetPassengerStatsTD], 0x000000FF);
 			PlayerTextDrawFont(playerid, DT_PlayerData[playerid][dtp_RaknetPassengerStatsTD], 1);
 			PlayerTextDrawLetterSize(playerid, DT_PlayerData[playerid][dtp_RaknetPassengerStatsTD], 0.20, 1.00);

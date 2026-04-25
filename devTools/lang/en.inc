@@ -268,10 +268,10 @@ new
 			DT_CMD_TEXT_OINTALL[] = 			"You changed interior to %d for all objects",
 			DT_CMD_TEXT_ODIS[] = 				"You set distance for object index %d to %.2f",
 			DT_CMD_TEXT_ODISALL[] = 			"You set distance %.2f for all objects",
-			DT_CMD_TEXT_OSETM[] = 				"Object material index %d changed to %d, %d, %s, %s, %d",
+			DT_CMD_TEXT_OSETM[] = 				"Object material index %d changed | Material index: %d | Modelid: %d | Material color: %d",
 			DT_CMD_TEXT_OSETM_TXD_LEN[] = 		"'Txd name' length from 1 to 64 characters",
 			DT_CMD_TEXT_OSETM_TEXTURE_LEN[] = 	"'Texture name' length from 1 to 64 characters",
-			DT_CMD_TEXT_OSETMT[] = 				"Object text index %d changed to %d, %s, %d, %s, %d, %d, %d, %d, %d",
+			DT_CMD_TEXT_OSETMT[] = 				"Object text index %d changed",
 			DT_CMD_TEXT_OSETMT_TEXT_LEN[] = 	"Text length from 1 to 144 characters",
 			DT_CMD_TEXT_OSETMT_FONT_LEN[] = 	"'FontFace' length from 1 to 64 characters",
 			DT_CMD_TEXT_ORMT[] = 				"Object index %d material in slot %d removed",
@@ -286,6 +286,4 @@ new
 			DT_CMD_TEXT_OYALL[] = 				"Y position of all objects changed to %f",
 			DT_CMD_TEXT_OZALL[] = 				"Z position of all objects changed to %f";
 	#endif
-	
-
 #endif

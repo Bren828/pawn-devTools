@@ -8,7 +8,7 @@ stock DT_LoadMap(playerid, const fileName[], const mapName[]) {
         return 0;
 	}
 
-    new DT_string[300];
+    new DT_string[350];
 
 	new modelid,
 		Float:x, Float:y, Float:z, 
