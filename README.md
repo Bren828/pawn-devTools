@@ -2,6 +2,15 @@
 
 The Dev Tools library is a tool for SA-MP (Pawn) developers, designed for debugging, monitoring, and simplifying the gamemode testing process.
 
+## Reference
+* [Installation](#installation)
+* [Commands](#commands)
+* [Functions](#functions)
+* [Definition](#definition)
+
+
+# Features
+
 ### Monitoring and Statistics
 Allows displaying important metrics via TextDraw:
 
