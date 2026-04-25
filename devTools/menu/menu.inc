@@ -100,7 +100,7 @@ public DT_PlayerStatTimer(playerid) {
 
 	static const DT_text[] = 
 		"~y~Player Data: %s(%d)~w~~n~\
-		Armour: %.2f, Armour: %.2f~n~\
+		Health: %.2f, Armour: %.2f~n~\
 		World: %d, INT: %d~n~\
 		Ping: %d, FPS: %d~n~\
 		Version: %s~n~\
