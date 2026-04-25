@@ -1,36 +1,36 @@
-# pawn-devTools
+# devTools
 
-Библиотека Dev Tools, представляет собой инструмент для разработчиков SA-MP (Pawn), предназначенный для отладки, мониторинга и упрощения процесса тестирования игрового режима.
+The Dev Tools library is a tool for SA-MP (Pawn) developers, designed for debugging, monitoring, and simplifying the gamemode testing process.
 
-### Мониторинг и статистика (Stats)
-Позволяет выводить в TextDraw с важными показателями
+### Monitoring and Statistics
+Allows displaying important metrics via TextDraw:
 
-- Игрок: Здоровье, позиция, оружие, пинг и другие данные.
-- Транспорт: Скорость, позиция, состояние и ID.
+- Player: Health, position, weapons, ping, and other data.
+- Vehicle: Speed, position, status, and ID.
 
-<img src="preview/stats.jpg" width="600">
+<img src="preview/stats.jpg" width="400">
 
-### Отладка событий (Callbacks)
-Отслеживания событий для конкретных игроков:
+### Event Debugging
+Tracking events for specific players:
 
-- Индекс анимации, нажатия клавиш, получение/нанесение урона.
-- Выстрелы, смерти, спавн.
-- Вход/выход и изменение состояния транспортных средств.
+- Animation index, key presses, receiving/inflicting damage.
+- Shots, deaths, spawn.
+- Entering/exiting and changing vehicle status.
 
-<img src="preview/public.jpg" width="600">
+<img src="preview/public.jpg" width="400">
 
-### Инструменты тестирования
-В библиотеку встроены функции, облегчающие перемещение и проверку механик:
+### Testing Tools
+The library includes built-in functions to facilitate movement and mechanic testing:
 
-- Телепортация по метке на карте.
-- Режим бога (GodMode).
-- Измерение расстояния до точки.
+- Teleport to a map waypoint.
+- GodMode.
+- Measuring distance to a point.
 
-<img src="preview/menu.jpg" width="600">
+<img src="preview/menu.jpg" width="400">
 
-### Редакторы
-- Инструмент для настройки прикрепленных к игроку объектов (выбор кости, модели).
-- Работа с объектами (создание, редактирование, экспорт, импорт).
+### Editors
+- Tool for configuring player-attached objects (bone and model selection).
+- Object management (creation, editing, export, import).
 
 ## Installation
 
@@ -47,7 +47,7 @@ public OnPlayerSpawn(playerid) {
 
 ## Commands
 
-<img src="preview/commands.jpg" width="300">
+<img src="preview/commands.jpg" width="200">
 
 ### Player commands
 
