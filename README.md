@@ -38,6 +38,8 @@ The library includes built-in functions to facilitate movement and mechanic test
 <img src="preview/menu.jpg" width="400">
 
 ### Editors
+Built-in object editing functions
+
 - Tool for configuring player-attached objects (bone and model selection).
 - Object management (creation, editing, export, import).
 
