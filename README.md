@@ -56,6 +56,9 @@ public OnPlayerSpawn(playerid) {
 
 ## Commands
 
+Initially, all commands are prefixed with `dt` to avoid name conflicts. 
+After the server starts, they are renamed using the `PC_RenameCommand` function, provided that a command with the target name has not already been registered.
+
 <img src="preview/commands.jpg" width="200">
 
 ### Player commands
