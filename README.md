@@ -1,5 +1,7 @@
 # devTools
 
+> [English](README.md) | [Русский](README.ru.md)
+
 The Dev Tools library is a tool for SA-MP (Pawn) developers, designed for debugging, monitoring, and simplifying the gamemode testing process.
 
 ## Reference
@@ -34,6 +36,9 @@ The library includes built-in functions to facilitate movement and mechanic test
 - Teleport to a map waypoint.
 - GodMode.
 - Measuring distance to a point.
+- Disabling punishment functions (Kick, Ban).
+- Double jump.
+- Mega bullet (Explosive shooting)
 
 <img src="preview/menu.jpg" width="400">
 
