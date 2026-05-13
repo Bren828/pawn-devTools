@@ -4,7 +4,7 @@
 #define _devTools_lang_included
 
 
-new DT_DIALOG_MENU[] = 
+new const DT_DIALOG_MENU[] = 
 	"Get distance from point \t %s\t\n\
 	Teleport to waypoint \t %s\n\
 	Get animation index \t %s\n\
@@ -12,7 +12,7 @@ new DT_DIALOG_MENU[] =
 	GodMode \t %s\n\
 	Camera target \t %s\n\
 	Double jump \t %s\n\
-	Mega bullet \t %s\n\
+	Mega bullet (Shooting explosions) \t %s\n\
 	{6fa8dc}Public log\n\
 	Player statistics \t %s\n\
 	Vehicle statistics \t %s\n\
@@ -21,7 +21,7 @@ new DT_DIALOG_MENU[] =
 	{366c90}Rak{f69d1d}Net: {FFFFFF}Vehicle passenger stats \t %s";
 
 
-new DT_DIALOG_PUBLICS[] = 
+new const DT_DIALOG_PUBLICS[] = 
 	"Key State Change \t %s\n\
 	Take Damage \t %s\n\
 	Give Damage \t %s\n\
@@ -33,7 +33,7 @@ new DT_DIALOG_PUBLICS[] =
 	Exit Vehicle \t %s";
 
 
-new 
+new const
 	DT_SELECT_BUTTON[] = 				"Select",
 	DT_CLOSE_BUTTON[] = 				"Close",
 	DT_BACK_BUTTON[] = 					"Back",
@@ -41,16 +41,16 @@ new
 
 
 #if defined DT_ENABLE_IGNORE_PUNISHMENTS
-	new 
+	new const
 		DT_TEXT_IGNORING_PUNISHMENT[] = "The '%s' attempt was ignored.";
 #else
-	new 
+	new const
 		DT_TEXT_IGNORING_PUNISHMENT[] = "Enable '#define DT_ENABLE_IGNORE_PUNISHMENTS' to use this feature";
 #endif
 
 
 //Dialog
-	new 
+	new const
 		DT_DIALOG_PLAYER_STATS_HEADER[] = 	"Player Statistics",
 		DT_DIALOG_PLAYER_STATS[] = 			"{FFFFFF}Enter Player ID:",
 
@@ -59,19 +59,19 @@ new
 
 
 #if !defined PAWNRAKNET_INC_
-	new 
+	new const
 		DT_TEXT_NO_RAKNET_PLUGIN[] = "Connect the 'PawnRaknet by katursis' plugin for this feature to work.";
 #endif
 
 
 #if !defined DT_DISABLE_COMMANDS
 
-	new DT_DIALOG_COMMANDS[] =
+	new const DT_DIALOG_COMMANDS[] =
 		"Player Commands\n\
 		Vehicle Commands\n\
 		Object Commands";
 
-	new 
+	new const
 		DT_NEXT_BUTTON[] = 		"Further",
 		DT_CONFIRM_BUTTON[] = 	"Yes",
 		DT_CANCEL_BUTTON[] = 	"No",
@@ -170,7 +170,7 @@ new
 
 
 //Other text
-	new 
+	new const
 		DT_TEXT_USE[] = 					"Use",
 		DT_TEXT_YOUR[] = 					"Your",
 		DT_TEXT_INVALID_COLOR[] = 			"Invalid color (0 - 255)",
@@ -186,7 +186,7 @@ new
 //Command text
 
 	// Player
-	new 
+	new const
 		DT_CMD_TEXT_GOTOPOS[] = 			"Teleport | X: %.4f | Y: %.4f | Z: %.4f | World: %d | Interior: %d",
 		DT_CMD_TEXT_GOTO[] = 				"You have been teleported to %s(%d)",
 		DT_CMD_TEXT_GETHERE[] = 			"You teleported %s(%d) to yourself",
@@ -216,7 +216,7 @@ new
 
 
 	// Vehicle
-	new 
+	new const
 		DT_CMD_TEXT_VEH[] = 				"Vehicle model %d has been created",
 		DT_CMD_TEXT_DELVEH[] = 				"Deleted %d vehicles",
 		DT_CMD_TEXT_GOTOVEH[] = 			"You teleported to vehicle ID: %d",
@@ -236,7 +236,7 @@ new
 
 	// Object
 	#if !defined DT_DISABLE_OBJECT_EDITOR
-		new 
+		new const
 			DT_TEXT_OBJECT_NOT_CREATED[] = 		"Object not created",
 			DT_TEXT_LIMIT_OBJECTS[] = 			"Object creation limit reached",
 			DT_TEXT_PROJECT_NOT_FOUND[] = 		"Project not found",
@@ -247,12 +247,12 @@ new
 			DT_TEXT_FAILED_CREATE_OBJECT[] = 	"Failed to create object";
 
 		#if !defined RemoveDynamicObjectMaterialText
-			new 
+			new const
 				DT_TEXT_OLD_VERSION_PLUGIN[] = "To use this command, update Streamer plugin to v2.9.5 or higher.";
 		#endif
 
 
-		new 
+		new const
 			DT_CMD_TEXT_OCREATE[] = 			"Object %d created under index %d",
 			DT_CMD_TEXT_ODEL[] = 				"Object under index %d deleted",
 			DT_CMD_TEXT_ODELALL[] = 			"All %d objects deleted",

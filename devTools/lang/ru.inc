@@ -4,7 +4,7 @@
 #define _devTools_lang_included
 
 
-new DT_DIALOG_MENU[] = 
+new const DT_DIALOG_MENU[] = 
 	"Получить расстояние от точки \t %s\t\n\
 	Телепорт по метке на карте \t %s\n\
 	Получить индекс анимации \t %s\n\
@@ -12,7 +12,7 @@ new DT_DIALOG_MENU[] =
 	Режим бога (GodMode) \t %s\n\
 	Camera target \t %s\n\
 	Двойной прыжок \t %s\n\
-	Мега пуля \t %s\n\
+	Мега пуля (Стрельба взрывами) \t %s\n\
 	{6fa8dc}Public log\n\
 	Статистика игрока \t %s\n\
 	Статистика транспорта \t %s\n\
@@ -21,7 +21,7 @@ new DT_DIALOG_MENU[] =
 	{366c90}Rak{f69d1d}Net: {FFFFFF}Статистика пассажиров транспорта \t %s";
 
 
-new DT_DIALOG_PUBLICS[] = 
+new const DT_DIALOG_PUBLICS[] = 
 	"Key State Change \t %s\n\
 	Take Damage \t %s\n\
 	Give Damage \t %s\n\
@@ -33,7 +33,7 @@ new DT_DIALOG_PUBLICS[] =
 	Exit Vehicle \t %s";
 
 
-new 
+new const
 	DT_SELECT_BUTTON[] = 				"Выбрать",
 	DT_CLOSE_BUTTON[] = 				"Закрыть",
 	DT_BACK_BUTTON[] = 					"Назад",
@@ -41,16 +41,16 @@ new
 
 
 #if defined DT_ENABLE_IGNORE_PUNISHMENTS
-	new 
-		DT_TEXT_IGNORING_PUNISHMENT[] = "The '%s' attempt was ignored.";
+	new const
+		DT_TEXT_IGNORING_PUNISHMENT[] = "Попытка '%s' была проигнорирована";
 #else
-	new 
+	new const
 		DT_TEXT_IGNORING_PUNISHMENT[] = "Включите '#define DT_ENABLE_IGNORE_PUNISHMENTS' для использование этой функции";
 #endif
 
 
 //Dialog
-	new 
+	new const
 		DT_DIALOG_PLAYER_STATS_HEADER[] = 	"Статистика игрока",
 		DT_DIALOG_PLAYER_STATS[] = 			"{FFFFFF}Введите ID игрока:",
 
@@ -59,19 +59,19 @@ new
 
 
 #if !defined PAWNRAKNET_INC_
-	new 
+	new const
 		DT_TEXT_NO_RAKNET_PLUGIN[] = "Подключите плагин 'PawnRaknet by katursis' для работы этой функции.";
 #endif
 
 
 #if !defined DT_DISABLE_COMMANDS
 
-	new DT_DIALOG_COMMANDS[] =
+	new const DT_DIALOG_COMMANDS[] =
 		"Команды игрока\n\
 		Команды транспорта\n\
 		Команды по объектам";
 
-	new 
+	new const
 		DT_NEXT_BUTTON[] = 		"Дальше",
 		DT_CONFIRM_BUTTON[] = 	"Да",
 		DT_CANCEL_BUTTON[] = 	"Нет",
@@ -170,7 +170,7 @@ new
 
 
 //Other text
-	new 
+	new const
 		DT_TEXT_USE[] = 					"Используйте",
 		DT_TEXT_YOUR[] = 					"Ваш",
 		DT_TEXT_INVALID_COLOR[] = 			"Неверный номер цвета (0 - 255)",
@@ -186,7 +186,7 @@ new
 //Command text
 
 	// Player
-	new 
+	new const
 		DT_CMD_TEXT_GOTOPOS[] = 			"Телепорт | X: %.4f | Y: %.4f | Z: %.4f | World: %d | Interior: %d",
 		DT_CMD_TEXT_GOTO[] = 				"Вы телепортированы к %s(%d)",
 		DT_CMD_TEXT_GETHERE[] = 			"Вы телепортировали %s(%d) к себе",
@@ -216,7 +216,7 @@ new
 
 
 	// Vehicle
-	new 
+	new const
 		DT_CMD_TEXT_VEH[] = 				"Транспорт модели %d был создан",
 		DT_CMD_TEXT_DELVEH[] = 				"Удалено транспорта %d шт",
 		DT_CMD_TEXT_GOTOVEH[] = 			"Вы телепортированы к транспорту ID: %d",
@@ -236,7 +236,7 @@ new
 
 	// Object
 	#if !defined DT_DISABLE_OBJECT_EDITOR
-		new 
+		new const
 			DT_TEXT_OBJECT_NOT_CREATED[] = 		"Объект не создан",
 			DT_TEXT_LIMIT_OBJECTS[] = 			"Достигнут предел создания объектов",
 			DT_TEXT_PROJECT_NOT_FOUND[] = 		"Проект не найден",
@@ -247,12 +247,12 @@ new
 			DT_TEXT_FAILED_CREATE_OBJECT[] = 	"Не удалось создать объект";
 
 		#if !defined RemoveDynamicObjectMaterialText || !defined RemoveDynamicObjectMaterial
-			new 
+			new const
 				DT_TEXT_OLD_VERSION_PLUGIN[] = "Для использования данной команды обновите плагин Streamer до версии v2.9.5 и выше.";
 		#endif
 
 
-		new 
+		new const
 			DT_CMD_TEXT_OCREATE[] = 			"Объект %d был создан под индексом %d",
 			DT_CMD_TEXT_ODEL[] = 				"Объект под индексом %d удален",
 			DT_CMD_TEXT_ODELALL[] = 			"Все %d шт объеков удалены",

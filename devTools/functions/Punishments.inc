@@ -55,11 +55,9 @@
 
     
     static stock DT_TextPunishment(playerid, const action[]) {
-        new DT_string[128];
+        new DT_string[sizeof(DT_TEXT_IGNORING_PUNISHMENT) + 10];
 
-        strcat(DT_string, DT_TEXT_IGNORING_PUNISHMENT);
-
-        format(DT_string, sizeof(DT_string), DT_string, action);
+        format(DT_string, sizeof(DT_string), DT_TEXT_IGNORING_PUNISHMENT, action);
         DT_SendSucc(playerid, DT_string);
         return 1;
     }

@@ -4,10 +4,10 @@
 *
 *   ---------------------------------------------------
 *
-*	Creater - @Bren828 					
-*									25 April 2026
+*	Created by Bren828 					
+*									13 May 2026
 *
-*   Version: 1.0
+*   Version: 1.0.1
 *
 *   ---------------------------------------------------
 *
@@ -25,7 +25,7 @@
 
 
 #define DT_NAME 					"Dev Tools"
-#define DT_VERSION 					"v1.0"
+#define DT_VERSION 					"v1.0.1"
 #define DT_AUTHOR 					"Bren828"
 
 #define DT_MAX_PLAYER_COMMANDS 		30
@@ -90,7 +90,7 @@
 
 #define DT_COLOR_MAIN 		0xfbbaa8FF
 
-#define DT_MAIN_COLOR_TAG 	"{fbbaa8}" //FFD700
+#define DT_MAIN_COLOR_TAG 	"{fbbaa8}"
 #define DT_WHITE_COLOR_TAG 	"{FFFFFF}"
 #define DT_RED_COLOR_TAG	"{f44747}"
 #define DT_GREEN_COLOR_TAG 	"{61dd61}"
@@ -101,7 +101,7 @@
 #define DT_TAG_HINT  		"["DT_NAME"]: "DT_WHITE_COLOR_TAG""
 #define DT_TAG_ERROR 		"["DT_NAME"]: "DT_RED_COLOR_TAG""
 
-#if !DT_INTERFACE_LANGUAGE
+#if DT_INTERFACE_LANGUAGE == 0
 	#include "lang\en.inc"
 #else 
 	#include "lang\ru.inc"

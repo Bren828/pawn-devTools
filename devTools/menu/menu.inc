@@ -143,24 +143,28 @@ public DT_PlayerStatTimer(playerid) {
 		Velocity:~n~\
 		%.2f %.2f %.2f";
 	
-	new DT_string[sizeof(DT_text) + 200], 
-		Float:x,
+	new Float:x,
 		Float:y,
 		Float:z,
 		Float:ang,
 		Float:health,
 		Float:armour,
 		dt_keys, 
-		updown, 
-		leftright,
+		dt_updown, 
+		dt_leftright,
 		version[24], 
-		name[MAX_PLAYER_NAME],
+		dt_name[MAX_PLAYER_NAME],
 		dt_hour, 
 		dt_minute,
 		Float:cam_x, Float:cam_y, Float:cam_z,
 		Float:camV_x, Float:camV_y, Float:camV_z,
 		Float:VX, Float:VY, Float:VZ;
 
+	new DT_string[sizeof(DT_text) + 
+		(19 * 10) + 
+		sizeof(version) + 
+		MAX_PLAYER_NAME
+		];
 
 	GetPlayerHealth(targetid, health);
 	GetPlayerArmour(targetid, armour);
@@ -171,17 +175,16 @@ public DT_PlayerStatTimer(playerid) {
 	GetPlayerCameraPos(targetid, cam_x, cam_y, cam_z);
 	GetPlayerCameraFrontVector(targetid, camV_x, camV_y, camV_z);
 
-	GetPlayerName(targetid, name, MAX_PLAYER_NAME);
-	GetPlayerKeys(targetid, dt_keys, updown, leftright);
+	GetPlayerName(targetid, dt_name, MAX_PLAYER_NAME);
+	GetPlayerKeys(targetid, dt_keys, dt_updown, dt_leftright);
 
 	GetPlayerPos(targetid, x, y, z);
 	GetPlayerFacingAngle(targetid, ang);
 
 	GetPlayerVelocity(playerid, VX, VY, VZ);
-	//GetPlayerLastShotVectors(playerid, &Float:fOriginX, &Float:fOriginY, &Float:fOriginZ, &Float:fHitPosX, &Float:fHitPosY, &Float:fHitPosZ)
 	
 	format(DT_string, sizeof(DT_string), DT_text,
-		name, targetid,
+		dt_name, targetid,
 		health, armour,
 		GetPlayerVirtualWorld(targetid), GetPlayerInterior(targetid),
 		GetPlayerPing(targetid), DT_GetPlayerFps(targetid),
@@ -195,7 +198,7 @@ public DT_PlayerStatTimer(playerid) {
 		GetPlayerWantedLevel(targetid),
 		GetPlayerFightingStyle(targetid),
 		GetPlayerSpecialAction(targetid),
-		dt_keys, updown, leftright,
+		dt_keys, dt_updown, dt_leftright,
 		GetPlayerVehicleID(targetid),
 		GetPlayerVehicleSeat(targetid),
 		GetPlayerSurfingVehicleID(targetid),
