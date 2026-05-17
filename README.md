@@ -52,10 +52,10 @@ Built-in object editing functions
 
 Include in your code and begin using the library:
 ```pawn
+#define DT_INTERFACE_LANGUAGE 0 // 0 - English | 1 - Russian 
 #include <devTools\devTools>
 
 public OnPlayerSpawn(playerid) { 
-	
     SetAccessDevTools(playerid, 1);
     return 1;
 }
@@ -69,6 +69,8 @@ After the server starts, they are renamed using the `PC_RenameCommand` function,
 <img src="preview/commands.jpg" width="200">
 
 ### Player commands
+<details>
+<summary>Click to expand the list</summary>
 
 | Command           | Description                    | Aliase      |
 | ----------------- | ------------------------------ | ----------- |
@@ -102,8 +104,11 @@ After the server starts, they are renamed using the `PC_RenameCommand` function,
 | `weaponskill`		| Set weapon skill level         | `setweaponskill` |
 | `setwanted`		| Set wanted level               | `setwantedlevel` |
 | `cursor`			| Show cursor                    | `tdselect` |
+</details>
 
 ### Vehicle Commands
+<details>
+<summary>Click to expand the list</summary>
 
 | Command           | Description                    | Aliase      |
 | ----------------- | ------------------------------ | ----------- |
@@ -119,9 +124,11 @@ After the server starts, they are renamed using the `PC_RenameCommand` function,
 | `vehen`           | Start/stop engine              | `vehengine`, `vehicleengine` | 
 | `vehli`           | Turn on/off lights             | `vehlights`, `vehiclelights` | 
 | `vehdo`           | Open/close doors               | `vehdoor`, `vehicledoor` |
-
+</details>
 
 ### Object Commands
+<details>
+<summary>Click to expand the list</summary>
 
 | Command           | Description                           | Aliase      |
 | ----------------- | ------------------------------------- | ----------- |
@@ -157,9 +164,12 @@ After the server starts, they are renamed using the `PC_RenameCommand` function,
 | `oxall`  			| Set X position for all objects        | |
 | `oyall`  			| Set Y position for all objects        | |
 | `ozall`  			| Set Z position for all objects        | |
-
+</details>
 
 ## Functions
+<details>
+<summary>Click to expand the list</summary>
+
 #### SetAccessDevTools(playerid, status)
 > Assigns a specific access status to a player
 > * `playerid` - The ID of the player
@@ -169,7 +179,7 @@ After the server starts, they are renamed using the `PC_RenameCommand` function,
 > Retrieves the current access status of a player
 > * `playerid` - The ID of the player
 > * Returns the current `status`
-
+</details>
 
 ## Definition
 <details>
@@ -192,5 +202,4 @@ After the server starts, they are renamed using the `PC_RenameCommand` function,
 #define DT_OBJECTS_FOLDER "devTools_Maps"
 #define DT_LENGTH_PROJECT_NAME 32
 ```
-
 </details

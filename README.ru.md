@@ -10,7 +10,7 @@
 * [Функции](#функции)
 * [Определение](#определение)
 
-# Features
+# Возможности
 
 ### Мониторинг и статистика
 Позволяет отображать важные показатели с помощью TextDraw:
@@ -51,10 +51,10 @@
 
 Включите эту библиотеку в свой код и начните её использовать:
 ```pawn
+#define DT_INTERFACE_LANGUAGE 1 // 0 - English | 1 - Russian 
 #include <devTools\devTools>
 
 public OnPlayerSpawn(playerid) { 
-	
     SetAccessDevTools(playerid, 1);
     return 1;
 }
@@ -68,6 +68,8 @@ public OnPlayerSpawn(playerid) {
 <img src="preview/commands-ru.jpg" width="200">
 
 ### Команды игроков
+<details>
+<summary>Click to expand the list</summary>
 
 | Команда           | Описание                              | Псевдоним   |
 | ----------------- | ------------------------------------- | ----------- |
@@ -101,8 +103,11 @@ public OnPlayerSpawn(playerid) {
 | `weaponskill`		| Установить уровень владения оружием   | `setweaponskill` |
 | `setwanted`		| Установить уровень розыска            | `setwantedlevel` |
 | `cursor`			| Показать курсор                       | `tdselect` |
+</details>
 
 ### Команды транспорта
+<details>
+<summary>Click to expand the list</summary>
 
 | Команда           | Описание                          | Псевдоним   |
 | ----------------- | --------------------------------- | ----------- |
@@ -118,9 +123,11 @@ public OnPlayerSpawn(playerid) {
 | `vehen`           | Запустить/заглушить двигатель     | `vehengine`, `vehicleengine` | 
 | `vehli`           | Включить/включить фары            | `vehlights`, `vehiclelights` | 
 | `vehdo`           | Открыть/закрыть двери             | `vehdoor`, `vehicledoor` |
-
+</details>
 
 ### Команды объектов
+<details>
+<summary>Click to expand the list</summary>
 
 | Команда           | Описание                                      | Псевдоним   |
 | ----------------- | --------------------------------------------- | ----------- |
@@ -156,9 +163,12 @@ public OnPlayerSpawn(playerid) {
 | `oxall`  			| Установить положение X всем объектам			| |
 | `oyall`  			| Установить положение Y всем объектам			| |
 | `ozall`  			| Установить положение Z всем объектам          | |
+</details>
 
+## Функции
+<details>
+<summary>Click to expand the list</summary>
 
-## функции
 #### SetAccessDevTools(playerid, status)
 > Назначает игроку статус доступа.
 > * `playerid` - Идентификатор игрока
@@ -168,7 +178,7 @@ public OnPlayerSpawn(playerid) {
 > Получает текущий статус доступа.
 > * `playerid` - Идентификатор игрока
 > * Возвращает текущий `status`
-
+</details>
 
 ## Определение
 <details>
